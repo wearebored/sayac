@@ -62,7 +62,7 @@ function Sayac() {
           : süre - 1020 >= 0
           ? `Savaşa ${
               süre - 1020 >= 60
-                ? `${((süre - 1020) / 60).toFixed(0)} dk dan fazla`
+                ? `${((süre - 1020) / 60).toFixed(0)} dk `
                 : `${süre - 1020} sn`
             } `
           : süre > 840
