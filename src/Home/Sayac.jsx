@@ -33,9 +33,9 @@ function Sayac() {
             : süre > 840
             ? "Yolculuk Başladı"
             : `Yolculuğa ${
-                süre - 30 >= 60
-                  ? `${((süre - 30) / 60 + 1).toFixed(0)} dk`
-                  : `${süre - 30} sn`
+                süre >= 60
+                  ? `${((süre ) / 60 + 1).toFixed(0)} dk`
+                  : `${süre } sn`
               }`}
         </button>
         <button className="res" onClick={() => setSüre(0)}></button>
