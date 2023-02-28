@@ -28,7 +28,7 @@ function Sayac() {
           disabled={süre > 0 && true}
           onClick={() => setSüre(1200)}
         >
-          {süre == 0
+          {süre === 0
             ? "Yolculuğa Başla"
             : süre > 840
             ? "Yolculuk Başladı"
@@ -45,7 +45,7 @@ function Sayac() {
         className="direk"
         style={{ backgroundColor: süre - 1150 <= 0 && "red" }}
       >
-        {süre == 0
+        {süre === 0
           ? "Yolculuk başlamadı"
           : süre - 1140 >= 0
           ? `Savunmaya ${süre - 1140} sn`
@@ -57,7 +57,7 @@ function Sayac() {
         className="hidra"
         style={{ backgroundColor: süre - 1030 <= 0 && "red" }}
       >
-        {süre == 0
+        {süre === 0
           ? "Yolculuk başlamadı"
           : süre - 1020 >= 0
           ? `Savaşa ${
