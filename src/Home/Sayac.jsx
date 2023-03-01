@@ -3,6 +3,9 @@ import "./sayac.css";
 
 function Sayac() {
   const [süre, setSüre] = useState(0);
+  const [vol1, setVol1] = useState(true);
+  const [vol2, setVol2] = useState(true);
+
   // const yolcu = new Audio("audio/yolcu.m4a");
   // const savunma = new Audio("audio/savunma.m4a");
   // const savas = new Audio("audio/savas.m4a");
@@ -18,20 +21,20 @@ function Sayac() {
         setSüre(süre - 1);
       }, 1000);
     }
-    if (süre <= 15 && süre > 0) {
+    if (süre === 15) {
       yolcu.play();
     }
-    if (süre === 1150) {
+    if (süre === 1150 && vol1) {
       savunma.play();
     }
-    if (süre === 1035) {
+    if (süre === 1035 && vol2) {
       savas.play();
     }
 
     return () => {
       clearInterval(interval);
     };
-  }, [setSüre, süre]);
+  }, [setSüre, süre, vol1, vol2]);
 
   console.log(süre);
 
@@ -56,33 +59,58 @@ function Sayac() {
         <button className="res" onClick={() => setSüre(0)}></button>
       </div>
 
-      <div
-        className="direk"
-        style={{ backgroundColor: süre - 1150 <= 0 && "red" }}
-      >
-        {süre === 0
-          ? "Yolculuk başlamadı"
-          : süre - 1140 >= 0
-          ? `Savunmaya ${süre - 1140} sn`
-          : süre > 1020
-          ? "Savunma başladı"
-          : "Savunma Bitti"}
+      <div className="sarici">
+        <div
+          className="direk"
+          style={{ backgroundColor: süre - 1150 <= 0 && "red" }}
+        >
+          {süre === 0
+            ? "Yolculuk başlamadı"
+            : süre - 1140 >= 0
+            ? `Savunmaya ${süre - 1140} sn`
+            : süre > 1020
+            ? "Savunma başladı"
+            : "Savunma Bitti"}
+        </div>
+        <button
+          style={{
+            backgroundImage: vol1
+              ? "url(./image/vol1.png)"
+              : "url(./image/vol2.png)",
+          }}
+          className="volume1"
+          onClick={() => setVol1(!vol1)}
+        ></button>
       </div>
-      <div
-        className="hidra"
-        style={{ backgroundColor: süre - 1030 <= 0 && "red" }}
-      >
-        {süre === 0
-          ? "Yolculuk başlamadı"
-          : süre - 1020 >= 0
-          ? `Savaşa ${
-              süre - 1020 >= 60
-                ? `${((süre - 1020) / 60).toFixed(0)} dk `
-                : `${süre - 1020} sn`
-            } `
-          : süre > 840
-          ? "Savaş başladı"
-          : "Savaş Bitti"}
+      <div className="sarici">
+        <div
+          className="hidra"
+          style={{
+            backgroundColor: süre - 1030 <= 0 && "red",
+          }}
+        >
+          {süre === 0
+            ? "Yolculuk başlamadı"
+            : süre - 1020 >= 0
+            ? `Savaşa ${
+                süre - 1020 >= 60
+                  ? `${((süre - 1020) / 60).toFixed(0)} dk `
+                  : `${süre - 1020} sn`
+              } `
+            : süre > 840
+            ? "Savaş başladı"
+            : "Savaş Bitti"}
+        </div>
+
+        <button
+          style={{
+            backgroundImage: vol2
+              ? "url(./image/vol1.png)"
+              : "url(./image/vol2.png)",
+          }}
+          className="volume2"
+          onClick={() => setVol2(!vol2)}
+        ></button>
       </div>
     </div>
   );
