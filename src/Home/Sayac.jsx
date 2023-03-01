@@ -3,10 +3,13 @@ import "./sayac.css";
 
 function Sayac() {
   const [süre, setSüre] = useState(0);
-  const yolcu = new Audio("audio/yolcu.m4a");
-  const savunma = new Audio("audio/savunma.m4a");
-  const savas = new Audio("audio/savas.m4a");
+  // const yolcu = new Audio("audio/yolcu.m4a");
+  // const savunma = new Audio("audio/savunma.m4a");
+  // const savas = new Audio("audio/savas.m4a");
   useEffect(() => {
+    const yolcu = new Audio("audio/yolcu.m4a");
+    const savunma = new Audio("audio/savunma.m4a");
+    const savas = new Audio("audio/savas.m4a");
     let interval;
     if (süre <= 0) {
       clearInterval(interval);
