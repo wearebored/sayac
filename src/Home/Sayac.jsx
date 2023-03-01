@@ -3,7 +3,9 @@ import "./sayac.css";
 
 function Sayac() {
   const [süre, setSüre] = useState(0);
-
+  const yolcu = new Audio("audio/yolcu.m4a");
+  const savunma = new Audio("audio/savunma.m4a");
+  const savas = new Audio("audio/savas.m4a");
   useEffect(() => {
     let interval;
     if (süre <= 0) {
@@ -13,6 +15,16 @@ function Sayac() {
         setSüre(süre - 1);
       }, 1000);
     }
+    if (süre <= 15 && süre > 0) {
+      yolcu.play();
+    }
+    if (süre === 1150) {
+      savunma.play();
+    }
+    if (süre === 1035) {
+      savas.play();
+    }
+
     return () => {
       clearInterval(interval);
     };

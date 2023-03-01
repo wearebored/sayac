@@ -11,12 +11,13 @@
   gap: 2rem;
   border: solid 2px rgb(0, 204, 255);
 }
-.sarici{
-    height: 50px;
+
+.sarici {
+  height: 50px;
   width: 300px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 .yolcu {
   height: 50px;
@@ -27,15 +28,14 @@
   font-size: 20px;
   font-weight: 700;
 }
-.res{
-    height: 40px;
+.res {
+  height: 40px;
   width: 40px;
   border-radius: 10px;
   background-image: url(../image/res.jpg);
   background-size: cover;
   background-position: center;
   /* background-color: red; */
-  
 }
 .yolcu:disabled {
   background-color: rgba(0, 0, 0, 0.527);
