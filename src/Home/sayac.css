@@ -28,20 +28,18 @@
   font-size: 20px;
   font-weight: 700;
 }
-.volume1{
+.volume1 {
   height: 40px;
   width: 40px;
   border-radius: 10px;
-  background-image: url(../image/res.jpg);
   background-size: cover;
   background-position: center;
   /* background-color: red; */
 }
-.volume2{
+.volume2 {
   height: 40px;
   width: 40px;
   border-radius: 10px;
-  background-image: url(../image/res.jpg);
   background-size: cover;
   background-position: center;
   /* background-color: red; */
